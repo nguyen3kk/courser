@@ -1,0 +1,167 @@
+/* Thiết lập cuộn mượt cho liên kết Jump to the Top */
+html {
+    scroll-behavior: smooth;
+}
+
+/* =========================================
+   BƯỚC 4: CHẾ ĐỘ XEM DI ĐỘNG (MOBILE VIEW - MẶC ĐỊNH)
+   Hiển thị 1 cột dọc trên màn hình nhỏ
+   ========================================= */
+body {
+    background-color: #dedede;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+header {
+    border-radius: 5px;
+    border: 5px solid #000;
+    margin: 10px;
+    padding: 10px;
+}
+
+h1 {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 32px;
+    color: #000;
+}
+
+h2 {
+    font-size: 25px;
+    font-family: Arial, sans-serif;
+}
+
+p, li {
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: left;
+    padding: 0 15px;
+}
+
+main {
+    border: 5px solid #000;
+    margin: 10px;
+    padding: 10px;
+}
+
+/* Trên di động: mỗi div chiếm gần hết chiều ngang (1 cột) */
+div {
+    display: block;
+    width: 90%;
+    margin: 15px auto;
+    padding: 10px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+}
+
+/* Đảm bảo hình ảnh nằm gọn bên trong div */
+img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+.label {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 10px;
+    padding: 0;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    margin: 20px 10px;
+}
+
+footer a {
+    color: #000;
+    text-decoration: none;
+    font-size: 20px;
+    border: 2px solid #000;
+    padding: 8px 16px;
+    border-radius: 25px;
+    background-color: #fff;
+}
+
+footer a:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+/* =========================================
+   BƯỚC 6: TRUY VẤN PHƯƠNG TIỆN THỨ NHẤT (TABLET VIEW - 772px)
+   Kích hoạt từ 772px trở lên: div rộng 45% viewport, ảnh cao tối đa 30vh
+   ========================================= */
+@media screen and (min-width: 772px) {
+    div {
+        display: inline-block;
+        width: 45vw;
+        vertical-align: top;
+        margin: 10px;
+    }
+
+    img {
+        max-height: 30vh;
+        width: auto;
+    }
+}
+
+/* =========================================
+   BƯỚC 8: TRUY VẤN PHƯƠNG TIỆN THỨ HAI (LARGE SCREEN VIEW - 998px)
+   Kích hoạt từ 998px trở lên: div rộng 30% viewport (3 cột)
+   ========================================= */
+@media screen and (min-width: 998px) {
+    div {
+        width: 30vw;
+    }
+}
+
+/* =========================================
+   BƯỚC 10: TRUY VẤN PHƯƠNG TIỆN THỨ BA (REDUCED MOTION)
+   Tắt hiệu ứng chuyển động cuộn trang khi người dùng bật chế độ giảm chuyển động
+   ========================================= */
+@media screen and (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* =========================================
+   BƯỚC 12: TRUY VẤN PHƯƠNG TIỆN THỨ TƯ (DARK MODE CHO CÁC DIV)
+   Điều chỉnh màu nền tối, chữ sáng và viền cho các div khi ở chế độ tối
+   ========================================= */
+@media screen and (prefers-color-scheme: dark) {
+    body {
+        background-color: #121212;
+        color: #f0f0f0;
+    }
+
+    header, main {
+        border-color: #f0f0f0;
+    }
+
+    h1 {
+        color: #f0f0f0;
+    }
+
+    div {
+        background-color: #2b2b2b;
+        color: #ffeb3b;
+        border-color: #000000;
+    }
+
+    footer a {
+        background-color: #2b2b2b;
+        color: #ffeb3b;
+        border-color: #ffeb3b;
+    }
+}
